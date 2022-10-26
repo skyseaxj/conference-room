@@ -1,6 +1,8 @@
 /*背景图片*/
 body{   
 background-image: url(background2.jpeg);
+background-size:cover;
+
 }
 /*登录界面背景*/
 #login_box{
@@ -44,13 +46,16 @@ background-image: url(background2.jpeg);
     width: 130px;
     height: 30px;
     margin-left: 30px;
-    background-color: rgb(38, 196, 213);
+    background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
     color: azure;
     border: none;/*消除内边框*/
+    border-radius: 13px;
 }
+/*鼠标悬停样式*/
 #login_button #log:hover{
     cursor: pointer;
 }
+/*注册按钮*/
 #login_button #register{
     margin-top: 30px;
     background: none;
