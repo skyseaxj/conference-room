@@ -7,9 +7,10 @@ background-size:cover;
 /*登录界面背景*/
 #login_box{
     background-color: rgba(246, 247, 249, 0.388);
+    
     text-align: center; /*内容居中*/
     margin: 0px auto;/* 外边框左右居中*/
-    margin-top: 200px;
+    margin-top: 240px;
     width: 380px;
     height: 300px;
 }
@@ -59,8 +60,9 @@ background-size:cover;
 #login_button #register{
     margin-top: 30px;
     background: none;
-    border: none;/*消除内边框*/
     padding-left: 300px;
+    text-decoration: none;/*去除下划线*/
+    color: black;
 }
 #login_button #register:hover{
     cursor: pointer;
