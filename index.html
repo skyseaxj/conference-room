@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <!--设置当前HTML文件的字符编码-->
+
+  <!--compatible兼容的，设置浏览器的兼容模式版本（让IE使用最新的渲染引擎工作）-->
+
+  <!--声明当前网页在移动端浏览器展示的相关设置-->
+  <!-- 
+			viewport表示用户是否可以缩放页面
+			width指定视区的逻辑宽度
+			device-width指定视区宽度应为设备的屏幕宽度
+			initial-scale指令用于设置Web页面的初始化缩放比例
+			initial-scale-1则将显示未经缩放的Web文档
+		 -->
+
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <title>会议室管理系统</title>
+  <!--引入Bootstrap核心样式表(CSS)文件-->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+  <link rel="stylesheet" href="css\main.css" />
+  <!--引入html5shiv.min.js让浏览器可以识别HTML5的新标签-->
+  <!--引入respond.min.js让低版本浏览器可以使用CSS3的媒体查询-->
+  <!--[if It IE 9]>
+		<script src="html5shiv/html5shiv.min.js"></script>
+		<script src="Respond/respond.min.js"></script>
+		<![endif]-->
+  <!--自己写的CSS样式文件放head最下面-->
+  <!-- Bootstrap的所有JS组件都是依赖jQuery的，所以必须放在前边-->
+  <script src="js/jquery-3.6.1.min.js"></script>
+  
+  <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。-->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <!--自己写的js文件放在body最下面-->
+</head>
+
+<body>
+  <div class="container-fluid">
+    <!-- 头部 -->
+    <div class="row head">
+      <h1  class="col-lg-2" id="uesr">管理员</h1>
+      <h1   class="col-lg-4  col-lg-offset-2" id="name">会议室管理系统</h1>
+      <div class="col-lg-2 col-lg-offset-2" id="user_menu">
+        <!-- 用户名下拉菜单 -->
+      <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" 
+                data-toggle="dropdown">
+          用户名 <span class="caret"></span>
+        </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">个人信息</a></li>
+              <li><a href="#">密码修改</a></li>
+              <li><a href="css/登录界面/loginInterface.html">退出登录</a></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+    <!-- 主体区域 -->
+    <div class="row">
+      <!-- 侧边导航 -->
+      <div class="col-lg-2 col-xs-2" id="nav">
+      <ul class="nav nav-pills nav-stacked">
+        <li ><a href="会议室管理.html" target="maframe">会议室管理</a></li>
+        <li ><a href="预约信息.html" target="maframe">预约信息</a></li>
+        <li><a href="用户管理.html" target="maframe">用户管理</a></li>
+      </ul>
+      </div>
+      <!-- 右边显示的主界面 -->
+      <div class="col-lg-10 col-xs-10" id="mainFrame">
+        <iframe name="maframe" src="welcome.html" height="1000px" width="100%"></iframe>
+      </div>
+    </div>
+  </div>
+
+  </form>
+
+
+</body>
+<script src="js/main.js"></script>
+
+</html>
