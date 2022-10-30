@@ -1,21 +1,41 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
-    
+
     <title>Document</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
-  
-  <!-- Bootstrap的所有JS组件都是依赖jQuery的，所以必须放在前边-->
-  <script src="js/jquery-3.6.1.min.js"></script>
-  
-  <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。-->
-  <script src="bootstrap/js/bootstrap.min.js"></script>
-  <!--自己写的js文件放在body最下面-->
+
+    <!-- Bootstrap的所有JS组件都是依赖jQuery的，所以必须放在前边-->
+    <script src="js/jquery-3.6.1.min.js"></script>
+
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。-->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!--自己写的js文件放在body最下面-->
 </head>
+
 <body>
     <div class="container-fluid">
         这是会议室管理界面
+        <div class="row">
+            <table class="table table-striped" id="meetingRoom">
+                <caption>会议室列表</caption>
+                <thead>
+                    <tr>
+                        <th>会议室号</th>
+                        <th>会议室位置</th>
+                        <th>可容纳人数</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="meetingRoomItem">
+
+                </tbody>
+
+            </table>
+        </div>
     </div>
 </body>
+<script src="js/会议室管理.js"></script>
 </html>
