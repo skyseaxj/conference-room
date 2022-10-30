@@ -6,6 +6,7 @@
 
     <title>Document</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="css/会议室管理.css" />
 
     <!-- Bootstrap的所有JS组件都是依赖jQuery的，所以必须放在前边-->
     <script src="js/jquery-3.6.1.min.js"></script>
@@ -35,7 +36,42 @@
 
             </table>
         </div>
+        <!-- 添加会议室按钮 -->
+        <div class row>
+            <input type="button" class="btn btn-success" value="添加会议室" id="add">
+        </div>
+    
     </div>
+        <!--遮罩层-->
+        <div id="j_mask" class="mask"></div>
+        <!--添加数据的表单-->
+        <div id="j_formAdd" class="form-add" >
+            <!-- 头部信息 -->
+            <div class="form-add-title">
+                <span>添加会议室</span>
+    
+                <div id="j_hideFormAdd">×</div>
+            </div>
+            <!-- 输入和添加按钮表单 -->
+            <form class="form-horizontal">
+            <div class="form-item">
+                <label class="lb" for="j_txtLesson">会议室号：</label>
+                <input class="txt" type="text" id="j_name" placeholder="请输入会议室号">
+            </div>
+            <div class="form-item">
+                <label class="lb" for="j_txtBelSch">会议室位置：</label>
+                <input class="txt" type="text" id="j_site" placeholder="请输入会议室位置">
+            </div>
+            <div class="form-item">
+                <label class="lb" for="j_txtBelSch">可容纳人数：</label>
+                <input class="txt" type="text" id="j_num" placeholder="请输入可容纳人数">
+            </div>
+            <!-- 添加按钮 -->
+            <div class="form-submit">
+                <input type="button" value="添加" id="j_btnAdd">
+            </div>
+        </form>
+        </div>
 </body>
 <script src="js/会议室管理.js"></script>
 </html>
