@@ -5,84 +5,84 @@ $(function () {
         site: "五楼",
         num: "100",
         value:"9:00-12:00",
-        id:"ming"
+        id:"明天"
         }, {
         time:"12:00-15:00",
         name: "3号会议室",
         site: "五楼",
         num: "200",
         value:"12:00-15:00",
-        id:"ming"
+        id:"明天"
         }, {
         time:"15:00-18:00",
         name: "4号会议室",
         site: "五楼",
         num: "300",
         value:"15:00-18:00",
-        id:"ming"
+        id:"明天"
         },{
         time:"18:00-21:00",
         name: "5号会议室",
         site: "五楼",
         num: "250",
         value:"18:00-21:00",
-        id:"ming"
+        id:"明天"
         },{
         time:"9:00-12:00",
         name: "2号会议室",
         site: "五楼",
         num: "100",
         value:"9:00-12:00",
-        id:"hou"
+        id:"后天"
         }, {
         time:"12:00-15:00",
         name: "3号会议室",
         site: "五楼",
         num: "200",
         value:"12:00-15:00",
-        id:"hou"
+        id:"后天"
         }, {
         time:"15:00-18:00",
         name: "4号会议室",
         site: "五楼",
         num: "300",
         value:"15:00-18:00",
-        id:"hou"
+        id:"后天"
         },{
         time:"18:00-21:00",
         name: "5号会议室",
         site: "五楼",
         num: "250",
         value:"18:00-21:00",
-        id:"hou"
+        id:"后天"
         },{
         time:"9:00-12:00",
         name: "2号会议室",
         site: "五楼",
         num: "100",
         value:"9:00-12:00",
-        id:"dahou"
+        id:"大后天"
         }, {
         time:"12:00-15:00",
         name: "3号会议室",
         site: "五楼",
         num: "200",
         value:"12:00-15:00",
-        id:"dahou"
+        id:"大后天"
         }, {
         time:"15:00-18:00",
         name: "4号会议室",
         site: "五楼",
         num: "300",
         value:"15:00-18:00",
-        id:"dahou"
+        id:"大后天"
         },{
         time:"18:00-21:00",
         name: "5号会议室",
         site: "五楼",
         num: "250",
         value:"18:00-21:00",
-        id:"dahou"
+        id:"大后天"
         },
 
     ];
@@ -96,6 +96,8 @@ $(function () {
                 var $tr = $("<tr><td>" + meeting_room[i]['name'] +
                 "</td><td>" + meeting_room[i]['site'] + 
                 "</td><td>" + meeting_room[i]['num'] + 
+                "</td><td>" + meeting_room[i]['time'] + 
+                "</td><td>" + meeting_room[i]['id'] + 
                 "</td><td>" +'<input type="button" class="btn btn-info" value="预定">'+
                 "</td></tr>");
                 //把创建出来的$tr追加到tbody中去.

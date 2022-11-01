@@ -14,6 +14,14 @@ background-size:cover;
     width: 380px;
     height: 300px;
 }
+#change_the_password{
+    background-color: rgba(246, 247, 249, 0.388);
+    text-align: center; /*内容居中*/
+    margin: 0px auto;/* 外边框左右居中*/
+    margin-top: 240px;
+    width: 400px;
+    height: 320px;
+}
 /*标题*/
 #login_box h2{
     padding-top: 60px;
@@ -66,4 +74,10 @@ background-size:cover;
 }
 #login_button #register:hover{
     cursor: pointer;
+}
+.select_body{
+    background-color:rgb(204, 224, 243);
+    width: 175px;
+    text-align: center;
+    margin-top:20px;
 }
