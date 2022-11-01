@@ -4,22 +4,21 @@
 	<head>
 		<title>注册</title>
 		<script type="text/javascript">
-			function  fun(){
-				alert("默认代表您同意《用户服务协议》和《隐私政策》");
-			}
+
 			function  onclickfun(){
+				
 				var  nameobj=document.getElementById("zcname");
 				var  nametext=nameobj.value;
 				var  namespanobj=document.getElementById("namespan");
 				var  natt=/^\w{3,8}$/;
-				if(natt.test(nametext)!=true){
+				if(natt.test(nametext)!=true){	//判断用户名是否符合要求
 					namespanobj.innerHTML="用户名不合要求";
 				}
 				var  passobj=document.getElementById("zcpass");
 				var  passtext=passobj.value;
 				var  passspanobj=document.getElementById("passspan");
 				var  patt=/^\w{6,12}$/;
-				if(patt.test(passtext)!=true){
+				if(patt.test(passtext)!=true){	//判断
 				passspanobj.innerHTML="密码不合要求";
 			}
 				var  passrobj=document.getElementById("zcrpass");
@@ -28,45 +27,11 @@
 				if(passrtext!=passtext){
 					passrspanobj.innerHTML="两次输入密码不一致";
 				}
-
 			}
 		</script>
+
 		<meta charset="utf-8">
-		<style type="text/css">
-			body{   
-			background-image: url(img/background2.jpeg);
-			background-size:cover;
-			}
-			#lunkuo{
-				position: absolute;
-				top: 50%;/*顶部到元素*/
-				left:30%;
-				width: 40%;
-				height:450px;
-				margin-top:-200;/*边缘到底部*/		
-				background-color: rgba(246, 247, 249, 0.388);
-				text-align-last: center;
-				filter:alpha(Opacity=60);
-			}
-			#lunkuo input{
-				font-size: 20px;
-				text-align: center;
-				border-radius: 25px;
-			}
-			#lunkuo h{
-    			color:black;
-			}
-			/*注册按钮*/
-			#reg{
-    			width: 160px;
-   				height: 30px;
-    			margin-left: 30px;
-    			background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
-    			color: azure;
-   				border: none;/*消除内边框*/
-    			border-radius: 13px;
-			}
-		</style>
+		<link rel="stylesheet" type="text/css" href="../zc/enroll.css"/>
 	</head>
 	<body>
 		<div id="lunkuo">

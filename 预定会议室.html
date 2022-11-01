@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,22 +9,26 @@
 
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
 
+    <link rel="stylesheet" href="css/会议室预定.css" />
+
     <script src="js/jquery-3.6.1.min.js"></script>
 
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
 </head>
-<body>
-    <div class="container-fluid ">  <!--第一行文字显示-->
-        <div class="row">
-            <div class="col-md-3">
-                <h2>可用会议室预约</h2>
-            </div>
-        </div>
 
-        <div class="row">   <!--查询-->
-           
-            <div class="col-md-3">  <!--查询日期-->
+<body> 
+    <div class="container-fluid panel panel-primary">
+        <!--第一行文字显示-->
+        <div class="row panel-heading head_body">
+            <h2 class="panel-title text-center">可用会议室预约</h2>
+        </div>
+    
+        <div class="row found_body" id="found">
+        <!--查询-->
+
+            <div class="col-md-2">
+                <!--查询日期-->
                 <select id="test1" class="form-control">
                     <option>请选择日期</option>
                     <option value="ming">明天</option>
@@ -32,7 +37,8 @@
                 </select>
             </div>
 
-            <div class="col-md-3">  <!--查询时间-->
+            <div class="col-md-2">
+            <!--查询时间-->
                 <select id="test2" class="form-control">
                     <option>请选择时间段</option>
                     <option value="9:00-12:00">9:00-12:00</option>
@@ -42,32 +48,34 @@
                 </select>
             </div>
 
-
             <div class="btn-group">
                 <button type="button" class="btn btn-primary" id="find">查询</button>
-              </div>
-
-
-        </div>
-        <div class="container-fluid">   <!--显示查询的界面-->
-            <div class="row">
-                <table class="table table-striped" id="meetingRoom">
-                    <caption>会议室列表</caption>
-                    <thead>
-                        <tr>
-                            <th>会议室号</th>
-                            <th>会议室位置</th>
-                            <th>可容纳人数</th>
-                            <th>操作</th>
-                        </tr>
-                    </thead>
-                    <tbody id="findItem">
-    
-                    </tbody>
-    
-                </table>
             </div>
+
         </div>
+   
+    </div>
+
+    <div class="container-fluid">
+        <!--显示查询的界面-->
+        <div class="row">
+            <table class="table table-striped" id="meetingRoom">
+                <h3 class="text-center"> 会议室列表</h3>
+                <thead>
+                    <tr>
+                        <th>会议室号</th>
+                        <th>会议室位置</th>
+                        <th>可容纳人数</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="findItem">
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
 
 
 

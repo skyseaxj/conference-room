@@ -1,0 +1,33 @@
+body{   
+background-image: url(img/background2.jpeg);
+background-size:cover;
+}
+#lunkuo{
+	position: absolute;
+	top: 50%;/*顶部到元素*/
+	left:30%;
+	width: 40%;
+	height:450px;
+	margin-top:-200;/*边缘到底部*/		
+	background-color: rgba(246, 247, 249, 0.388);
+	text-align-last: center;
+	filter:alpha(Opacity=60);
+}
+#lunkuo input{
+	font-size: 20px;
+	text-align: center;
+	border-radius: 25px;
+}
+#lunkuo h{
+    color:black;
+}
+/*注册/登录按钮*/
+#reg{
+    width: 160px;
+   	height: 30px;
+    margin-left: 30px;
+    background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+    color: azure;
+   	border: none;/*消除内边框*/
+    border-radius: 13px;
+}
