@@ -75,3 +75,9 @@ background-size:cover;
 #login_button #register:hover{
     cursor: pointer;
 }
+.select_body{
+    background-color:rgb(204, 224, 243);
+    width: 175px;
+    text-align: center;
+    margin-top:20px;
+}
