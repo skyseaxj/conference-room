@@ -31,4 +31,7 @@ body{
     border: none;/*消除内边框*/
     border-radius: 13px;
 }
+.change{
+    margin-bottom: 20px;
+}
     

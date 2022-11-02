@@ -5,6 +5,8 @@
     
     <title>Document</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+
+    <link rel="stylesheet" href="css/预约信息.css" />
   
   <!-- Bootstrap的所有JS组件都是依赖jQuery的，所以必须放在前边-->
   <script src="js/jquery-3.6.1.min.js"></script>
@@ -14,11 +16,11 @@
   <!--自己写的js文件放在body最下面-->
 </head>
 <body>
-    <div class="container-fluid">
-        这是预约信息界面
-        <div class="row">
-            <table class="table table-striped" id="reserve">
-                <caption>预约信息列表</caption>
+    <div class="container-fluid panel panel-info bianju">
+        <table class="table table-striped" id="reserve">
+            <div class="panel-heading">
+                <h1 align="center">预约信息列表</h1>
+            </div>
                 <thead>
                     <tr>
                         <th>预约人</th>
@@ -32,8 +34,8 @@
 
                 </tbody>
 
-            </table>
-        </div>
+        </table>
+        
     </div>
 </body>
 <script src="js/预约信息.js"></script>
