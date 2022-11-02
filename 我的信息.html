@@ -7,6 +7,7 @@
     <title>用户会议室预订系统</title>
 
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="css/我的信息.css" />
 
     <script src="js/jquery-3.6.1.min.js"></script>
 
@@ -14,26 +15,26 @@
 
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid panel panel-primary bianju">
+        <table class="table table-striped" id="meetingRoom">
+            <div class="row panel-heading head_body">
+               <h2 class="panel-title text-center">会议室列表</h2>
+            </div>
+            <thead>
+                <tr>
+                    <th>会议室号</th>
+                    <th>会议室位置</th>
+                    <th>可容纳人数</th>
+                    <th>时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody id="meetingRoomItem">
+
+            </tbody>
+
+        </table>
         
-        <div class="row">
-            <table class="table table-striped" id="meetingRoom">
-                <caption><h2 class="text-center">会议室列表</h2></caption>
-                <thead>
-                    <tr>
-                        <th>会议室号</th>
-                        <th>会议室位置</th>
-                        <th>可容纳人数</th>
-                        <th>时间</th>
-                        <th>操作</th>
-                    </tr>
-                </thead>
-                <tbody id="meetingRoomItem">
-
-                </tbody>
-
-            </table>
-        </div>
     </div>
 </body>
 <script src="js/会议室管理.js"></script>

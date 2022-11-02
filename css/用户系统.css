@@ -1,8 +1,6 @@
  /* 用户类型标题 */
- #authority{
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 20px;
+ #user{
+    float: left;
 }
 /* 会议室标题 */
 #name{
@@ -18,13 +16,11 @@
     height: 100px;
     background-color: rgb(92, 179, 204);
 }
-
 /* 侧边导航栏 */
 #nav{
   background-color: rgb(208, 223, 230);
   height: 1000px;
   padding-top: 30px;
-  display: none;
 }
 /* 导航栏链接按钮 */
 /* #nav ul li{
