@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+
+    <link rel="stylesheet" href="css/个人信息.css" />
+
+    <!-- Bootstrap的所有JS组件都是依赖jQuery的，所以必须放在前边-->
+    <script src="js/jquery-3.6.1.min.js"></script>
+
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。-->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!--自己写的js文件放在body最下面-->
+
+
+</head>
+
+<body>
+    <div class="container ">
+
+        <div class="panel panel-info div1_body">
+            <div class="panel-heading">
+                <h1>个人信息</h1>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal">
+
+                    <div class="form-group div2_body">
+                        <label for="user" class="col-sm-2 control-label">用户名：</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="user" type="text" placeholder="数据" disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-group div2_body">
+                        <label for="pass" class="col-sm-2 control-label">密码：</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="pass" type="text" placeholder="数据" disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-group div2_body">
+                        <label for="phone" class="col-sm-2 control-label">手机号码：</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="phone" type="text" placeholder="数据" disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-group div2_body">
+                        <label for="email" class="col-sm-2 control-label">邮箱：</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" id="email" type="text" placeholder="数据" disabled>
+                        </div>
+                    </div>
+
+                    <div class="div2_body col-md-offset-2">
+                
+                        <input id="change" type="button" class="btn btn-info" value="修改"></input>
+                        
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+<script src="js/个人信息界面.js"></script>
+
+</html>
+
+

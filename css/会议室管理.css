@@ -87,3 +87,8 @@
 .from-check{
     margin-top: 34px;
 }
+/*修改边距*/
+.bianju{
+    padding-right: 0px;
+    padding-left: 0px;
+}
