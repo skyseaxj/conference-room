@@ -10,7 +10,7 @@ import java.util.List;
 public class Room {
     private Integer id;
 
-    private String location;
+
     private String name;
     private String site;
     private Integer num;

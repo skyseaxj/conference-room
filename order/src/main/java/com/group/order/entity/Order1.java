@@ -12,6 +12,7 @@ public class Order1 {
         private String message;
         private String room;
         private String builder;
+        private String phone;
         private LocalDate oneday;
         private String times;//222  0不可用，1可用，2已被使用
 
