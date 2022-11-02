@@ -12,6 +12,7 @@ import java.time.LocalDate;
 
 @RestController
 @RequestMapping("/orders")
+@CrossOrigin
 public class OrderController {
     @Autowired
     private OrderServiceImpl orderService;
