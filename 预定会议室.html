@@ -29,24 +29,16 @@
 
             <div class="col-md-2">
                 <!--查询日期-->
+                <!-- yyyy-mm-dd -->
                 <select id="test1" class="form-control">
                     <option>请选择日期</option>
-                    <option value="明天">明天</option>
-                    <option value="后天">后天</option>
-                    <option value="大后天">大后天</option>
+                    <option id='time1' value="明天">2022-11-04</option>
+                    <option id='time2' value="后天">2022-11-05</option>
+                    <option id='time3' value="大后天">2022-11-06</option>
                 </select>
             </div>
 
-            <div class="col-md-2">
-            <!--查询时间-->
-                <select id="test2" class="form-control">
-                    <option>请选择时间段</option>
-                    <option value="9:00-12:00">9:00-12:00</option>
-                    <option value="12:00-15:00">12:00-15:00</option>
-                    <option value="15:00-18:00">15:00-18:00</option>
-                    <option value="18:00-21:00">18:00-21:00</option>
-                </select>
-            </div>
+            
 
             <div class="btn-group">
                 <button type="button" class="btn btn-primary" id="find">查询</button>
@@ -59,15 +51,13 @@
     <div class="container-fluid">
         <!--显示查询的界面-->
         <div class="row">
-            <table class="table table-striped" id="meetingRoom">
-                <h3 class="text-center"> 会议室列表</h3>
+            <table class="table table-striped" id="meetingRoom">  
                 <thead>
                     <tr>
                         <th>会议室号</th>
                         <th>会议室位置</th>
                         <th>可容纳人数</th>
                         <th>时间</th>
-                        <th>日期</th>
                         <th>操作</th>
                     </tr>
                 </thead>
@@ -77,11 +67,61 @@
 
             </table>
         </div>
-    </div>
-
-
 
     </div>
+    <!--遮罩层-->
+    <div id="j_mask" class="mask"></div>
+    <!--添加数据的表单-->
+    <div id="j_formAdd" class="form-add">
+        <!-- 头部信息 -->
+        <div class="form-add-title">
+            <span>请填写会议室信息</span>
+
+            <div id="j_hideFormAdd">×</div>
+        </div>
+        <!-- 输入和添加按钮表单 -->
+        <form class="form-horizontal">
+            <!-- 文本输入框 -->
+            <div class="form-text form-group">
+                <label class="col-sm-3 control-label" for="j_txtBelSch" >会议室号：</label>
+                <div class="col-sm-9">
+                    <input class="txt form-control" type="text" id="j_name" placeholder="请输入会议室位置" disabled>
+                </div>
+            </div>
+            <div class="form-text form-group">
+                <label class="col-sm-3 control-label" for="j_txtBelSch">预定信息：</label>
+                <div class="col-sm-9">
+                    <input class="txt form-control" type="text" id="j_msg" placeholder="请输入预定信息">
+                </div>
+            </div>
+            <div class="form-text form-group">
+                <label class="col-sm-3 control-label" for="j_txtBelSch">联系电话：</label>
+                <div class="col-sm-9">
+                    <input class="txt form-control" type="text" id="j_phone" placeholder="请输入联系电话">
+                </div>
+            </div>
+            <!-- 可选时间段 -->
+            <div class="from-check">
+                <label class="col-sm-3 control-label">可选时间段:</label>
+                <div class="form-group col-sm-9">
+                    <label class="checkbox-inline ">
+                        <input type="checkbox" id="j_time1" value="time1" name="time" > 早上
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="j_time2" value="time2" name="time" > 中午
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="j_time3" value="time3" name="time" > 晚上
+                    </label>
+                </div>
+            </div>
+            <!-- 添加按钮 -->
+            <div class="form-submit">
+                <input type="button" value="确认" id="j_btnAdd" class="notButton">
+            </div>
+        </form>
+    </div>
+
 </body>
 <script src="js/会议室预定.js"></script>
 

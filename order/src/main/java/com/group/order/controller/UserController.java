@@ -2,8 +2,10 @@ package com.group.order.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.group.order.common.JwtUtils;
 import com.group.order.common.Result;
+import com.group.order.entity.Order1;
 import com.group.order.entity.User;
 import com.group.order.service.Impl.UserServiceImpl;
 
@@ -63,8 +65,9 @@ public class UserController {
 
     @GetMapping
     public Result queryAll(){
-
-        return Result.ok().data("users",userService.list());
+        LambdaQueryWrapper<User> lqw = new LambdaQueryWrapper<User>();
+        lqw.eq(User::getStatus,0);
+        return Result.ok().data("users",userService.list(lqw));
     }
 
     @PostMapping

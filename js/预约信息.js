@@ -1,40 +1,32 @@
 $(function () {
     //预约数据，模拟后端拿到数据
-    var reserve = [{
-        name: "张三",
-        num: "会议室2",
-        date: "2022-11-2",
-        time: "晚上",
-        tele: "12345678"
-    }, {
-        name: "赵四",
-        num: "会议室3",
-        date: "2022-11-3",
-        time: "早上",
-        tele: "12345678"
-    }, {
-        name: "李五",
-        num: "会议室4",
-        date: "2022-11-4",
-        time: "下午",
-        tele: "12345678"
-    }];
-    // 添加获取数据已有的预约信息到页面表格中
-    function get_reserve() {
-        //发起ajax请求预约信息数据
-        $.get('http', function (res) {
-
-            for (var i = 0; i < reserve.length; i++) {
-                var $tr = $("<tr><td>" + reserve[i]['name'] +
-                    "</td><td>" + reserve[i]['num'] +
-                    "</td><td>" + reserve[i]['date'] +
-                    "</td><td>" + reserve[i]['time'] +
-                    "</td><td>" + reserve[i]['tele'] +
-                    "</td></tr>");
-                //把创建出来的$tr追加到tbody中去.
-                $('#reserveItem').append($tr);
-            }
-        })
-    }
-    get_reserve();
+     // 添加获取数据已有的预订信息到页面表格中
+ function get_Orders() {
+    // 发起Ajax请求预订信息数据
+    $.get('http://localhost/orders/' , function (res) {
+        // 判断是否获取成功     
+        console.log(res);
+        if (!res.success) return alert('获取预订信息失败');
+        var string = "";
+        for (var i = 0; i < res.data.orders.length; i++) {
+            string = string + "<tr><td>" + res.data.orders[i]['builder']+
+            "</td><td>" + res.data.orders[i]['room'] +
+                "</td><td>" + res.data.orders[i]['message'] +
+                "</td><td>" + res.data.orders[i]['oneday'] +
+                "</td><td>" + res.data.orders[i]['phone'] +
+                "</td><td>"
+            var times = res.data.orders[i]['times'].split("");
+            if (times[0] == 2) string = string + "8:00-11:30" + "</br>";
+            if (times[1] == 2) string = string + "14:00-17:30" + "</br>";
+            if (times[2] == 2) string = string + "18:00-21:00";
+            string = string + "</td><td>";
+            var $tr = $(string);
+            //把创建出来的$tr追加到tbody中去.
+            $('#reserveItem').empty().append($tr);
+        }
+    })
+}
+get_Orders();
 })
+
+ 

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Interface</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+    <!-- Bootstrap的所有JS组件都是依赖jQuery的，所以必须放在前边-->
+    <script src="js/jquery-3.6.1.min.js"></script>
+
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。-->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/loginInterface.css"/>
+    <link rel="stylesheet" href="loginInterface.css" />
+</head>
+<body>
+    <div id="login_box">
+        <h2>欢迎访问会议室预定系统</h2>
+        <form method="post" class="myform" >
+            账号：<input type="text" id="te" placeholder="username"><br/>
+            密码：<input type="password" id="pass" placeholder="password"><br/>
+            <!-- 身份：
+                <select class="select_body" id="">
+                    <option value=0>用户</option>
+                    <option value=1>管理员</option>
+                </select> -->
+            <div id="login_button">
+                <input type="button" id="log" value="登 录"><br/>
+                <a id="register" href="./注册界面.html" target="_blank">注册</a>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="js/loginInterface.js"></script>
+<script src="js/用户系统.js"></script>
+<script src="js/main.js"></script>
+</html>

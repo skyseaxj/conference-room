@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 
+import static java.time.format.DateTimeFormatter.ISO_DATE;
+
 @RestController
 @RequestMapping("/orders")
 @CrossOrigin
@@ -18,12 +20,12 @@ public class OrderController {
     private OrderServiceImpl orderService;
 
     @GetMapping
-    public Result getByDay(LocalDate day, Order1 order1){
+    public Result getByDay(String day, Order1 order1){
 
         LambdaQueryWrapper<Order1> lqw = new LambdaQueryWrapper<>();
         lqw.like(StringUtils.isNotEmpty(order1.getBuilder()),Order1::getBuilder,order1.getBuilder());
         lqw.like(StringUtils.isNotEmpty(order1.getMessage()), Order1::getMessage, order1.getMessage());
-        lqw.like(StringUtils.isNotEmpty(day.toString()),Order1::getOneday,day);
+        if (null!=day) lqw.like(StringUtils.isNotEmpty(day),Order1::getOneday,LocalDate.parse(day,ISO_DATE));
         return Result.ok().data("orders", orderService.list(lqw) );
     }
     @GetMapping("/0")
@@ -32,7 +34,7 @@ public class OrderController {
         LambdaQueryWrapper<Order1> lqw = new LambdaQueryWrapper<>();
         lqw.eq(StringUtils.isNotEmpty(order1.getBuilder()),Order1::getBuilder,order1.getBuilder());
         lqw.like(StringUtils.isNotEmpty(order1.getMessage()), Order1::getMessage, order1.getMessage());
-        lqw.like(StringUtils.isNotEmpty(day),Order1::getOneday,day);
+        if (null!=day)lqw.like(StringUtils.isNotEmpty(day),Order1::getOneday,LocalDate.parse(day,ISO_DATE));
         return Result.ok().data("orders", orderService.list(lqw) );
     }
 

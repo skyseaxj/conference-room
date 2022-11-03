@@ -7,7 +7,6 @@
     <title>用户会议室预订系统</title>
 
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
-    <link rel="stylesheet" href="css/我的信息.css" />
 
     <script src="js/jquery-3.6.1.min.js"></script>
 
@@ -15,27 +14,43 @@
 
 </head>
 <body>
-    <div class="container-fluid panel panel-primary bianju">
-        <table class="table table-striped" id="meetingRoom">
-            <div class="row panel-heading head_body">
-               <h2 class="panel-title text-center">会议室列表</h2>
-            </div>
-            <thead>
-                <tr>
-                    <th>会议室号</th>
-                    <th>会议室位置</th>
-                    <th>可容纳人数</th>
-                    <th>时间</th>
-                    <th>操作</th>
-                </tr>
-            </thead>
-            <tbody id="meetingRoomItem">
-
-            </tbody>
-
-        </table>
+    <div class="container-fluid bianju">
         
+        
+        <div class="container-fluid panel panel-info bianju">
+            <table class="table table-striped" id="reserve">
+                <div class="row panel-heading head_body">
+                    <h1 align="center">预约信息列表</h1>
+                </div>
+                
+                <div class="form-group" id="findbox">
+                    <label for="input" class="col-sm-1 control-label ">预约信息:</label>
+                    <div class="col-sm-8">
+                        <input type="text" name="" id="textMsg" class="form-control"  required="required" placeholder="查询预定信息">
+                    </div>
+                    
+                    <button type="button" class="btn btn-success" id="find">查询</button>
+                    
+                </div>
+                
+                    <thead>
+                        <tr>
+                            <th>会议室号</th>
+                            <th>预约信息</th>
+                            <th>预约日期</th>
+                            <th>联系方式</th>
+                            <th>预约时间段</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reserveItem">
+    
+                    </tbody>
+    
+            </table>
+            
+        </div>
     </div>
 </body>
-<script src="js/会议室管理.js"></script>
+<script src="js/我的信息.js"></script>
 </html>

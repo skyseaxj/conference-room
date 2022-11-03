@@ -34,3 +34,8 @@
     position:relative;
     margin: 50px;
 }
+/* 用户名称菜单 */
+#user_menu{
+    margin-top: 20px;
+    text-align: center
+}

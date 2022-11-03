@@ -1,21 +1,5 @@
 $(function () {
-    //会议室数据，模拟后端拿到数据
-    var meeting_room = [{
-        name: "2号会议室",
-        site: "五楼",
-        num: "100",
-        time: [true, true, true]
-    }, {
-        name: "3号会议室",
-        site: "五楼",
-        num: "200",
-        time: [true, false, true]
-    }, {
-        name: "4号会议室",
-        site: "五楼",
-        num: "300",
-        time1:1 
-    },];
+   
 
     // 添加获取数据已有的会议室信息到页面表格中
     function get_meetingRoom() {
@@ -45,14 +29,55 @@ $(function () {
     }
     get_meetingRoom();
 
+    
     // 会议室修改
     $('#meetingRoomItem').on('click','.set',function () {
+        // 删除按钮
+        $('.notButton').remove();
+        var string='<input type="button" value="确认" id="alter" class="notButton">';
+         //修改确认按键
+
+        var $tr=$(string);
+        $('.form-submit').empty().append($tr);
+        $('#alter').on('click',function(){
+            $('.notButton').attr('id','j_btnAdd');
+            var txtName = $('#j_name').val().trim();
+            var txtSite = $('#j_site').val().trim();
+            var txtNum = $('#j_num').val().trim();
+            var times = [Number($('#j_time1').prop('checked')), Number($('#j_time2').prop('checked')), Number($('#j_time3').prop('checked'))].join('');
+            console.log(times)
+            $.ajax({
+                type:'put',//请求方式
+                url:'http://localhost/rooms',
+                data:JSON.stringify({ 
+                'id':id,
+                'name': txtName,
+                'num': txtNum,
+                'site': txtSite,
+                'times': times
+                }),
+                contentType:"application/json",
+                success:function(res){
+                    if(res.code!=20000)return alert('修改会议室信息失败');
+                    // 重新获取会议室列表
+                }
+            })
+            get_meetingRoom();
+            //数据面板和遮罩层隐藏
+            // 关闭添加界面
+            $('#j_formAdd').hide();
+            // 关闭遮罩层
+            $('#j_mask').hide();
+        })
         // 打开添加界面
         $('#j_formAdd').show();
         // 打开遮罩层
         $('#j_mask').show();
         // 获取修改会议室数据的id值
         var id=$(this).attr('data-id')
+        var txtName ;
+        var txtSite ;
+        var txtNum ;
         $.ajax({
             type:'get',//请求方式
             url:'http://localhost/rooms/'+id,
@@ -63,28 +88,46 @@ $(function () {
                 $('#j_name').val(res.data.room['name']);
                 $('#j_site').val(res.data.room['site']);
                 $('#j_num').val(res.data.room['num']);
+                txtName = $('#j_name').val().trim();
+                txtSite = $('#j_site').val().trim();
+                txtNum = $('#j_num').val().trim();
                 var times=res.data.room['times'].split("");
                 if (times[0]==1)  $("#j_time1").prop("checked",true);
                 else $("#j_time1").prop("checked",false);
                 if (times[1]==1)  $("#j_time2").prop("checked",true);
-                else $("#j_time1").prop("checked",false);
+                else $("#j_time2").prop("checked",false);
                 if (times[2]==1)  $("#j_time3").prop("checked",true);
-                else $("#j_time1").prop("checked",false);
+                else $("#j_time3").prop("checked",false);
             }
+
         })
+               
         
+    })
+    //修改确认按键
+    $('#alter').on('click',function(){
+        $('.notButton').attr('id','j_btnAdd');
+        var txtName = $('#j_name').val().trim();
+        var txtSite = $('#j_site').val().trim();
+        var txtNum = $('#j_num').val().trim();
+        var times = [Number($('#j_time1').prop('checked')), Number($('#j_time2').prop('checked')), Number($('#j_time3').prop('checked'))].join('');
+        console.log(times)
         $.ajax({
-            type:'',//请求方式
-            url:'http://localhost/rooms/'+id,
+            type:'put',//请求方式
+            url:'http://localhost/rooms',
+            data:JSON.stringify({ 
+            'id':id,
+            'name': txtName,
+            'num': txtNum,
+            'site': txtSite,
+            'times': times
+            }),
+            contentType:"application/json",
             success:function(res){
-                if(res.code!=20000)return alert('删除信息信息失败');
+                if(res.code!=20000)return alert('修改会议室信息失败');
                 // 重新获取会议室列表
-                get_meetingRoom();
             }
         })
-        $('#j_name').val("");
-        $('#j_site').val("");
-        $('#j_num').val("");
     })
     // 表格删除操作,需要通过父类代理事件才能绑定
     $('#meetingRoomItem').on('click','.del',function () {
@@ -111,10 +154,14 @@ $(function () {
     })
     // 关闭添加界面
     $('#j_hideFormAdd').click(function () {
+        $('#j_name').val("");
+        $('#j_site').val("");
+        $('#j_num').val("");
         // 关闭添加界面
         $('#j_formAdd').hide();
         // 关闭遮罩层
         $('#j_mask').hide();
+
     })
 
     // 添加界面添加数据
@@ -124,9 +171,6 @@ $(function () {
         var txtSite = $('#j_site').val().trim();
         var txtNum = $('#j_num').val().trim();
         var times = [Number($('#j_time1').prop('checked')), Number($('#j_time2').prop('checked')), Number($('#j_time3').prop('checked'))].join('');
-        console.log(times);
-        console.log(txtName);
-
         // 如果填写内容有为空的弹出提示
         // if(txtName.length<=0||txtSite.length<=0||txtNum.length<=0||(!times[0]&&times[1]&&times[2])){
         //     return alert('请填写完整的会议室信息');

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,49 +7,69 @@
     <title>用户系统</title>
 
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
-    <link rel="stylesheet" href="css/用户系统.css" />
+    <link rel="stylesheet" href="css/main.css"/>
     <link rel="stylesheet" href="font-awesome-4.7.0\font-awesome-4.7.0\css\font-awesome.min.css">
-
     <script src="js/jquery-3.6.1.min.js"></script>
-
+    
     <script src="bootstrap/js/bootstrap.min.js"></script>
-
+    
     <!-- 样式 -->
+    <style>     
+        div.ex
+        {
+        width:300px;
+        padding:100px;
+        border:10px;
+        margin:0px;
+        }
+    </style>
 
 </head>
 
 <body>
     <div class="container-fluid">
 
-        <div class="row head">
-            <!--第一行-->
-            <h1 class="col-md-2 text-center">用户</h1>
+        <div class="row head">    <!--第一行-->
+            <h1 class="col-md-2 text-center" >用户</h1>
             <!-- 偏移3列占4行并居中 -->
-            <h1 class="col-md-9 text-center" id="name">会议室管理系统</h1>
+            <h1 class="col-md-9 text-center" id="name">会议室管理系统</h1>  
+        <!-- 用户名下拉菜单 -->
+      <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" 
+                data-toggle="dropdown">
+          用户名 <span class="caret"></span>
+        </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="个人信息界面.html">个人信息</a></li>
+              <li><a href="css/修改密码界面/修改密码.html">密码修改</a></li>
+              <li><a href="loginInterface.html">退出登录</a></li>
+            </ul>
+        </div>
         </div>
         <!-- 胶囊式标签页以垂直方向堆叠排列的标签 -->
         <div class="row">
             <div class="col-md-2 " id="nav">
-                <ul class="nav nav-pills nav-stacked">
-                    <div class="col-md-offset-4">
-                        <i class="fa fa-search fa-3x" aria-hidden="true"></i>
-                    </div>
-                    <li class="nav_item li_body"><a href="预定会议室.html" target="maframe">预定会议室</a></li>
-                    <div class="col-md-offset-4">
-                        <i class="fa fa-user-circle-o fa-3x" aria-hidden="true"></i>
-                    </div>
-                    <li class="nav_item li_body"><a href="我的信息.html" target="maframe">我的信息</a></li>
+            <ul class="nav nav-pills nav-stacked">
+                <div class="col-md-offset-4">
+                    <i class="fa fa-search fa-3x" aria-hidden="true"></i>
+                </div>
+                <li class="nav_item li_body"><a href="预定会议室.html" target="maframe">预定会议室</a></li>
+                <div class="col-md-offset-4">
+                    <i class="fa fa-user-circle-o fa-3x" aria-hidden="true"></i>
+                </div>
+                <li class="nav_item li_body"><a href="我的信息.html" target="maframe">我的信息</a></li>
 
-                </ul>
-            </div>
-            <div class="col-lg-10 col-xs-10" id="mainFrame">
-                <iframe name="maframe" src="welcome.html" height="1000px" width="100%"></iframe>
-            </div>
-
+              </ul>
         </div>
+        <div class="col-lg-10 col-xs-10" id="mainFrame">
+            <iframe name="maframe" src="welcome.html" height="1000px" width="100%"></iframe>
+          </div>
+    
+    </div>
 </body>
 
 <script src="js/用户系统.js"></script>
-<script src="js/main.js"></script>
+<script src="js/loginInterface.js"></script>
+
 
 </html>
